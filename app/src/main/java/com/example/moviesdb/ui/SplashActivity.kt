@@ -1,7 +1,8 @@
-package com.example.moviesdb
+package com.example.moviesdb.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.moviesdb.R
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
