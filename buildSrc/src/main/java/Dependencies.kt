@@ -29,6 +29,7 @@ object Versions {
     const val LOGGING_INTERCEPTORS = "4.0.0"
     const val PAGING_3 = "3.0.0-alpha05"
     const val COIL = "0.11.0"
+    const val PRDownloader = "0.6.0"
 
 }
 
@@ -129,6 +130,10 @@ object PAGING {
     const val PAGING_RUNTIME = "androidx.paging:paging-runtime-ktx:${Versions.PAGING_3}"
     const val PAGING_COMMON = "androidx.paging:paging-common-ktx:${Versions.PAGING_3}"
     const val PAGING_RX = "androidx.paging:paging-rxjava2:${Versions.PAGING_3}"
+}
+
+object PRDownloader {
+    const val PRDownloader = "com.mindorks.android:prdownloader:${Versions.PRDownloader}"
 }
 
 

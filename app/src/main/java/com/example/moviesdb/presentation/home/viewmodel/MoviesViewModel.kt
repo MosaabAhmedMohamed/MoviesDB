@@ -1,13 +1,12 @@
 package com.example.moviesdb.presentation.home.viewmodel
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.paging.Pager
 import androidx.paging.PagingData
 import androidx.paging.liveData
 import com.example.moviesdb.data.home.remote.model.Results
 import com.example.moviesdb.domin.usecase.MoviesUseCase
-import com.movie.popularmovies.util.rx.AppSchedulerProvider
+import com.example.moviesdb.util.rx.AppSchedulerProvider
 import javax.inject.Inject
 
 class MoviesViewModel

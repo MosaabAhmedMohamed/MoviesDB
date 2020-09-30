@@ -76,8 +76,8 @@ open class BaseViewModel(
      * Dispose from current [CompositeDisposable].
      */
     private fun dispose() {
-        if (!disposables!!.isDisposed) {
-            disposables!!.dispose()
+        if (!disposables?.isDisposed!!) {
+            disposables?.dispose()
         }
     }
 

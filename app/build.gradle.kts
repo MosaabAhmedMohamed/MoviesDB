@@ -101,4 +101,6 @@ dependencies {
 
     implementation(COIL.COIL)
 
+    implementation(PRDownloader.PRDownloader)
+
 }

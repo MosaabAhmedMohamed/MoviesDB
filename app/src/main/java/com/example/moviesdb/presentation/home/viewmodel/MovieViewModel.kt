@@ -5,8 +5,9 @@ import com.example.moviesdb.data.home.remote.model.MovieDetailModel
 import com.example.moviesdb.domin.usecase.MovieUseCase
 import com.example.moviesdb.presentation.BaseViewState
 import com.example.moviesdb.util.NetworkState
-import com.movie.popularmovies.util.rx.AppSchedulerProvider
+import com.example.moviesdb.util.rx.AppSchedulerProvider
 import io.reactivex.functions.Consumer
+import okhttp3.ResponseBody
 import javax.inject.Inject
 
 class MovieViewModel
@@ -19,6 +20,8 @@ constructor(
 ) {
 
     val movieVS: MutableLiveData<BaseViewState<MovieDetailModel>> = MutableLiveData()
+    val fileVS: MutableLiveData<BaseViewState<ResponseBody>> = MutableLiveData()
+    var imgUrl: String? = null
 
     fun movie(id: Int) {
         val viewState: BaseViewState<MovieDetailModel> = BaseViewState()
@@ -41,7 +44,28 @@ constructor(
         )
     }
 
-
+    fun downloadFile() {
+        val viewState: BaseViewState<ResponseBody> = BaseViewState()
+        viewState.networkState = NetworkState.LOADED
+        imgUrl?.let { useCase.downloadFile(it).toFlowable() }?.let {
+            execute(
+                Consumer {
+                    viewState.networkState = NetworkState.LOADING
+                    fileVS.postValue(viewState)
+                },
+                Consumer {
+                    viewState.networkState = NetworkState.LOADED
+                    viewState.response = it
+                    fileVS.postValue(viewState)
+                },
+                Consumer { throwable ->
+                    viewState.networkState = getFailedNetworkState(throwable)
+                    fileVS.postValue(viewState)
+                },
+                it
+            )
+        }
+    }
 
 
 }

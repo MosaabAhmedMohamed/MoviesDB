@@ -1,4 +1,4 @@
-package com.example.moviesdb.ui.home.fragment
+package com.example.moviesdb.ui.home.fragment.adapter
 
 import android.view.View
 import coil.api.load

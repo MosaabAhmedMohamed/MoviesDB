@@ -42,6 +42,7 @@ abstract class BaseFragment constructor(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         init()
+        onViewClicked()
     }
 
     protected abstract fun init()

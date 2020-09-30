@@ -1,4 +1,4 @@
-package com.example.moviesdb.ui.home.fragment
+package com.example.moviesdb.ui.home.fragment.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -20,7 +20,9 @@ class HeaderFooterAdapter(
         parent: ViewGroup,
         loadState: LoadState
     ): NetworkStateItemViewHolder {
-        return NetworkStateItemViewHolder(parent) {adapter.retry()}
+        return NetworkStateItemViewHolder(
+            parent
+        ) { adapter.retry() }
     }
 }
 

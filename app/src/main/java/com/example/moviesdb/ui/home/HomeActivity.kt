@@ -19,6 +19,4 @@ class HomeActivity : BaseActivity(), HasAndroidInjector {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
     }
-
-
 }

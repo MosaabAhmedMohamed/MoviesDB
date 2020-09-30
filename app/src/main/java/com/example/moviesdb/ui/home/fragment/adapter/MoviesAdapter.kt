@@ -1,4 +1,4 @@
-package com.example.moviesdb.ui.home.fragment
+package com.example.moviesdb.ui.home.fragment.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -17,7 +17,10 @@ class MoviesAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieItemViewHolder {
         val view: View =
             LayoutInflater.from(parent.context).inflate(R.layout.item_movie, parent, false)
-        return MovieItemViewHolder(view, onItemClickListener)
+        return MovieItemViewHolder(
+            view,
+            onItemClickListener
+        )
     }
 
     override fun onBindViewHolder(holder: MovieItemViewHolder, position: Int) {

@@ -1,4 +1,4 @@
-package com.movie.popularmovies.util.extintion
+package com.example.moviesdb.util.extintion
 
 import android.app.Activity
 import android.content.Context
@@ -9,6 +9,8 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.annotation.StringRes
+import androidx.fragment.app.Fragment
+import com.example.moviesdb.util.ReadWritePermission
 
 fun ViewGroup.inflate(@LayoutRes resourceId: Int) =
     LayoutInflater.from(context).inflate(
@@ -30,6 +32,12 @@ fun Activity.displayToast(
     Toast.makeText(this, message, Toast.LENGTH_LONG).show()
 }
 
+fun Fragment.displayToast(
+message: String
+) {
+    Toast.makeText(context, message, Toast.LENGTH_LONG).show()
+}
+
 fun View.hide() {
     visibility = View.GONE
 }
@@ -48,3 +56,4 @@ fun View.hideKeyboard(activity: Activity) {
     val inputManager: InputMethodManager = activity.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
     inputManager.hideSoftInputFromWindow(view.windowToken, 0)
 }
+

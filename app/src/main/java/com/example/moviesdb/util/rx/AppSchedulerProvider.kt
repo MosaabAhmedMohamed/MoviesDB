@@ -1,5 +1,6 @@
-package com.movie.popularmovies.util.rx
+package com.example.moviesdb.util.rx
 
+import com.movie.popularmovies.util.rx.SchedulerProvider
 import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers

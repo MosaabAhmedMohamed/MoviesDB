@@ -9,6 +9,7 @@ import com.example.moviesdb.data.home.repository.datasource.MoviesDataSource
 import com.example.moviesdb.domin.repository.MoviesRepository
 import com.example.moviesdb.util.Constants.Companion.API_KEY
 import io.reactivex.Single
+import okhttp3.ResponseBody
 import javax.inject.Inject
 
 class MovieRepositoryImpl
@@ -26,5 +27,9 @@ constructor(
         return Pager(
             PagingConfig( /* pageSize = */15, enablePlaceholders =  false),
             pagingSourceFactory = { MoviesDataSource(api) })
+    }
+
+    override fun downloadFile(url: String): Single<ResponseBody> {
+        return api.downloadFile(url)
     }
 }
